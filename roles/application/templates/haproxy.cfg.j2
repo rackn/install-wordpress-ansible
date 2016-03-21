@@ -35,7 +35,7 @@ backend apps
     option forwardfor
     http-request set-header X-Forwarded-Port %[dst_port]
     {% for host in groups['apps'] %}
-server {{ host }} {{ hostvars[host]['ansible_eth1']['ipv4']['address'] }}
+server {{ host }} {{ hostvars[host]['ip'] }}
     {% endfor %}
 
 listen stats
