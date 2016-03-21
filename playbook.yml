@@ -8,7 +8,6 @@
   sudo: yes
   roles:
     - { role: common, tags: ["common"] }
-    - { role: openssh, tags: ["openssh"] }
     - { role: fail2ban, tags: ["fail2ban"] }
     - { role: rkhunter, tags: ["rkhunter"] }
 
