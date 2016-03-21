@@ -4,16 +4,16 @@
 
 ## database tasks
 - include: 02-create_databases.yml
-  when: server_role == 'db'
+  when: inventory_hostname in groups['dbs']
 
 ## application tasks
 - include: 03-app_dir.yml
-  when: server_role == 'app'
+  when: inventory_hostname in groups['apps']
 - include: 04-install_wp.yml
-  when: server_role == 'app'
+  when: inventory_hostname in groups['apps']
 - include: 05-nginx_vhost.yml
-  when: server_role == 'app'
+  when: inventory_hostname in groups['apps']
 
 ## load balancers tasks
 - include: 06-add_haproxy.yml
-  when: server_role == 'lb'
+  when: inventory_hostname in groups['lbs']
