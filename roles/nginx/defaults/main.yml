@@ -1,6 +1,6 @@
 ---
 nginx_version: "stable"
-nginx_delete_default: False
+nginx_delete_default: True
 
 # Nginx Configuration
 nginx_user: www-data
