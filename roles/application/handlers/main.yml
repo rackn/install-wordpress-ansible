@@ -1,0 +1,12 @@
+---
+
+- name: app_restart_nginx
+  service:
+        name=nginx
+        state=restarted
+
+- name: app_restart_haproxy
+  service:
+        name=haproxy
+        state=restarted
+
